@@ -5,12 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crystal Forest</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    h1 {
+      color: #2e7d32;
+      animation: zoomIn 1s ease-in-out;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .riddle {
+      background: #ffffffcc;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-style: italic;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  </style>
 </head>
 <body>
   <div style="text-align: center; margin-top: 50px;">
     <h1>🌲 Crystal Forest</h1>
+    <div class="riddle">“I go up but never come down. What am I?” (Hint: Age)</div>
+    <div class="riddle">“I’m tall when I’m young and short when I’m old. What am I?” (Hint: Candle)</div>
+    <div class="riddle">“What has hands but can’t clap?” (Hint: Clock)</div>
     <p>Choose a puzzle to play:</p>
-    <div>
+    <div class="buttons">
       <a href="puzzle1.html"><button>Puzzle 1</button></a>
       <a href="puzzle2.html"><button>Puzzle 2</button></a>
       <a href="puzzle3.html"><button>Puzzle 3</button></a>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crown Tower</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div style="text-align: center; margin-top: 50px;">
+    <h1>🏰 Crown Tower</h1>
+    <p>You must complete all forest puzzles to enter.</p>
+    <button onclick="checkProgress()">Enter Final Puzzle</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    function checkProgress() {
+      const progress = JSON.parse(localStorage.getItem('progress')) || {};
+      const allComplete = ['forest_level_1','forest_level_2','forest_level_3','forest_level_4','forest_level_5','forest_level_6']
+        .every(key => progress[key]);
+      if (allComplete) {
+        window.location.href = "final_puzzle.html";
+      } else {
+        document.getElementById('status').innerText = "Complete all forest puzzles first!";
+      }
+    }
+  </script>
+</body>
+</html>

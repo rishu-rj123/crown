@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Final Puzzle - Crown Trial</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff3e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      text-align: center;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      border: 2px solid #e65100;
+      max-width: 600px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #e65100;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      width: 80%;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #fb8c00;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ef6c00;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>👑 The Final Puzzle</h1>
+    <p>I wear many faces but only one crown. What am I?</p>
+    <input type="text" id="answer" placeholder="Type your answer here" />
+    <br />
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer').value.trim().toLowerCase();
+      const result = document.getElementById('result');
+      if (input === 'king') {
+        localStorage.setItem('crown_winner', true);
+        result.innerText = 'Correct! You have claimed the crown!';
+        result.style.color = 'green';
+      } else {
+        result.innerText = 'Incorrect. Try again!';
+        result.style.color = 'red';
+      }
+    }
+  </script>
+</body>
+</html>
